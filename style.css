@@ -309,52 +309,48 @@ footer .header__button {
     .exhibitions .container, 
     footer .container {
         width: 90% !important; 
-        padding: 40px 5%; /* 左右に少し隙間を作る */
-        display: block;   /* flexを解除して縦に並べる */
+        padding: 40px 5% !important;
+        /* display: block; は削除するか、Flexを維持する */
+        display: flex !important;
+        flex-direction: column !important;
     }
-    .exhibitions__images{
-        flex-direction: column;
+
+    /* ここが重要！親にflexを宣言し直す */
+    .exhibitions__images {
+        display: flex !important;
+        flex-direction: column !important;
         align-items: center;
-        gap:15px;
+        gap: 15px;
     }
+
     .exhibitions__img {
-        width:100% !important;
+        width: 100% !important;
+        flex: none !important; /* PCの flex: 1; を解除 */
     }
+
     .exhibitions__img img {
-        height:400px;
-        object-fit:cover;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
     }
 
-    /* ヘッダーのロゴがはみ出さないように */
-    .header__logo {
-        margin: 0 auto !important;
-    }
-    .header__logo img {
-        height: 40px;
-    }
-
-    /* 先生紹介セクションの調整 */
-    .teacher .container {
-        padding: 20px 5% !important;
-    }
+    /* 先生紹介（ここもコンテナのflex-directionが効けば縦になります） */
     .teacher__image {
         width: 100% !important;
         max-width: 100% !important;
     }
+    
     .teacher__contents {
         padding-left: 0 !important;
-        text-align: center;
+        margin-top: 20px;
     }
-    
-    /* 5番（h5）のバッジが浮かないように調整 */
+
+    /* その他、既存の修正 */
     h5 {
-        position: static !important; /* 浮かせずに通常の流れに置く */
+        position: static !important;
         transform: none !important;
-        margin-bottom: 10px;
-    }
-    
-    /* レッスンの文章が詰まらないように */
-    .what__lesson p {
-        margin-top: 10px !important;
+        margin: 0 auto 10px !important;
+        display: block !important;
+        width: fit-content;
     }
 }
