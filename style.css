@@ -312,6 +312,18 @@ footer .header__button {
         padding: 40px 5%; /* 左右に少し隙間を作る */
         display: block;   /* flexを解除して縦に並べる */
     }
+    .exhibitions__images{
+        flex-direction: column;
+        align-items: center;
+        gap:15px;
+    }
+    .exhibitions__img {
+        width:100% !important;
+    }
+    .exhibitions__img img {
+        height:400px;
+        object-fit:cover;
+    }
 
     /* ヘッダーのロゴがはみ出さないように */
     .header__logo {
